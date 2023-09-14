@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VM | College Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .title {
+            margin-left: 100px;
+        }
+        
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #edcece;
+            box-shadow: 0 0 10px rgba(64, 53, 53, 0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            font-weight: bold;
+        }
+        
+        select,
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            border: 1px solid #ed962b;
+            border-radius: 5px;
+        }
+        
+        button {
+            background-color: #2930f0;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            margin-left: 190px;
+        }
+        
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <center>
+            <h1>College Prediction</h1>
+        </center>
+
+        <form id="rankpredictorForm" action="https://cutoff.vidyarthimitra.org/collegePrediction/updateRankPredictor" method="post" enctype="multipart/form-data">
+            <div class="container mt-10 mb-100">
+                <div class="row">
+                    <p class="show_err"></p>
+                    <div class="mt-20">
+                        <div class="form-group row">
+                            <div class="col-md-3">
+                                <label class="label"><b>Select Course</b> <b class="text-danger"> *</b></label>
+                                <div class="mt-10" data-toggle="tooltip" title="" data-placement="top" data-original-title="Type courses you want to take admission in" aria-describedby="tooltip591543">
+                                    <select class="form-control" name="courses" id="courses" required="">
+                                        <option value="">Select Course</option>
+                                                                                                            <option value="28">Bachelor of Pharmacy</option>
+                                                                                                                        <option value="13">Bachelor of Engineering</option>
+                                                                                                                        <option value="142">Master of Business Administration</option>
+                                                                                                        <option value="poly">Polytechnic</option>
+                                    </select>
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="text-red"></div>
+                            </div>
+                            <div class="col-md-3" id="poly3" style="display: none;">
+                                <label class="label"><b>Admission To - District</b><b class="text-danger"> *</b></label>
+                                <select class="form-control" autocapitalize="none" autocomplete="off" autocorrect="off" name="interest_city" id="interest_city" required="">
+                                    <option value="">Select District</option>
+                                                                                 </select>
+                                <div class="clearfix"></div>
+                                <div class="text-red">
+                                </div>
+                            </div>
+                            <div class="col-md-6" id="unv-poly">
+                                <label class="label"><b> Select University</b> <b class="text-danger"> *</b></label>
+                                <select name="admission_university" id="admission_university" class="form-control">
+                                    <option value="">Select University</option>
+                                                                                </select>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="col-md-3">
+                                <label class="label"><b> Select Branch</b></label>
+                                <div class="mt-10">
+                                    <select class="form-control" autocapitalize="none" autocomplete="off" autocorrect="off" name="branches" id="branches">
+                                        <option value="">All</option>    
+                                                                                        </select>
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="text-red"></div>
+                            </div>
+                            <div class="col-md-3">
+                                <label class="label"><b>Gender</b><b class="text-danger"> *</b></label>
+                                <div class="mt-10" data-toggle="tooltip" title="" data-placement="top" data-original-title="">
+                                    <select class="form-control" name="gender" id="gender" required="">
+                                            <option value="">Gender</option>  
+                                            <option value="1">Male</option>     
+                                            <option value="2">Female</option>       
+                                        </select>
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="text-red"></div>
+                            </div>
+                            <div class="col-md-6" id="poly1">
+                                <label class="label"><b>Exam Passout District</b><b class="text-danger"> *</b></label>
+                                <select class="form-control" autocapitalize="none" autocomplete="off" autocorrect="off" name="city" id="city" required="">
+                                    <option value="">Select Exam Passout District</option>
+                                                                                                <option value="313">Ahmednagar</option>
+                                                                                                        <option value="314">Akola</option>
+                                                                                                        <option value="315">Amrawati</option>
+                                                                                                        <option value="316">Aurangabad</option>
+                                                                                                        <option value="318">Beed</option>
+                                                                                                        <option value="317">Bhandara</option>
+                                                                                                        <option value="319">Buldhana</option>
+                                                                                                        <option value="320">Chandrapur</option>
+                                                                                                        <option value="321">Dhule</option>
+                                                                                                        <option value="322">Gadchiroli</option>
+                                                                                                        <option value="323">Gondiya</option>
+                                                                                                        <option value="324">Hingoli</option>
+                                                                                                        <option value="325">Jalgaon</option>
+                                                                                                        <option value="326">Jalna</option>
+                                                                                                        <option value="327">Kolhapur</option>
+                                                                                                        <option value="328">Latur</option>
+                                                                                                        <option value="329">Mumbai City</option>
+                                                                                                        <option value="330">Mumbai suburban</option>
+                                                                                                        <option value="333">Nagpur</option>
+                                                                                                        <option value="332">Nanded</option>
+                                                                                                        <option value="331">Nandurbar</option>
+                                                                                                        <option value="334">Nashik</option>
+                                                                                                        <option value="335">Osmanabad</option>
+                                                                                                        <option value="336">Parbhani</option>
+                                                                                                        <option value="337">Pune</option>
+                                                                                                        <option value="338">Raigad</option>
+                                                                                                        <option value="339">Ratnagiri</option>
+                                                                                                        <option value="341">Sangli</option>
+                                                                                                        <option value="343">Satara</option>
+                                                                                                        <option value="340">Sindhudurg</option>
+                                                                                                        <option value="342">Solapur</option>
+                                                                                                        <option value="344">Thane</option>
+                                                                                                        <option value="345">Wardha</option>
+                                                                                                        <option value="346">Washim</option>
+                                                                                                        <option value="347">Yavatmal</option>
+                                                                                         </select>
+                                <div class="clearfix"></div>
+                                <div class="text-red">
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <label class="label"><b>Category</b><b class="text-danger"> *</b></label>
+                                <div class="mt-10">
+                                    <select class="form-control" name="category" id="category" required="">
+                                            <option value="">Select Category</option>    
+                                               
+                                            
+                                        </select>
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="text-red"></div>
+                            </div>
+                            <div class="col-md-3" id="courseType" style="display: none;">
+                                <label class="label"><b>Subject Group</b><b class="text-danger"> *</b></label>
+                                <div class="mt-10" data-toggle="tooltip" title="" data-placement="left">
+                                    <select class="form-control" name="subgroup" id="subgroup">
+                                        <option value="">Select Subject Group</option>    
+                                         
+                                    </select>
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="text-red">
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <label class="label"><b>CAP ROUND</b><b class="text-danger"> *</b></label>
+                                <div class="mt-10">
+                                    <select class="form-control" name="cap" id="cap" required="">
+                                        <option value="">Select CAP list</option>    
+                                           
+                                    </select>
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="text-red"></div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="row">
+                                    <div class="col-md-5">
+                                        <label class="label"><b>Merit Score / Percentile</b><b class="text-danger"> *</b></label>
+                                        <div class="mt-10" data-toggle="tooltip" title="" data-placement="left" data-original-title="">
+                                            <input id="score" type="text" class="form-control" value="" onfocusout="myFunction()" name="score" placeholder="Score" required="" style="height:35px">
+                                        </div>
+                                        <div class="clearfix"></div>
+                                        <div class="text-red"></div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="text-center">
+                                <button type="button" data-toggle="modal" class="btn btn-primary btn-outline" id="checkField">Search</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
